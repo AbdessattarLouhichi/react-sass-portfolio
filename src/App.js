@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Suspense , lazy } from "react";
+import { routes } from "./routes";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import './scss/main.scss'
+
+
+const Layout = lazy(() => import('./layout/Layout'))
+
+const routing = routes.map((route) => {
+  return (
+    route.element && {
+      path: route.path,
+      element: <route.element />,
+      exact: route.exact,
+      name: route.name
+    }
+  )
+})
+
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element: <Layout />,
+    children: routing
+  }
+])
+
+const Loading = 
+  <div className="d-flex justify-content-center vh-100 align-items-center">
+    <div className="spinner-grow text-info" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </div>
+  </div>
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={Loading} >
+      <RouterProvider router={router} fallbackElement={Loading} />
+    </Suspense>
   );
 }
 
