@@ -1,9 +1,11 @@
 import { lazy } from 'react'
-const Home = lazy(() => import('./components/home/Home'))
-const Resume =  lazy(() => import('./components/page/Resume'))
-const Portfolio =  lazy(() => import('./components/page/Portfolio'))
-const Blog = lazy(()=> import('./components/page/Blog'))
-const Contact = lazy(()=> import('./components/page/Contact'))
+const Home = lazy(() => import('./components/Home'))
+const About =  lazy(() => import('./components/About'))
+const Services=  lazy(() => import('./components/Services'))
+const Works =  lazy(() => import('./components/About'))
+const Journey=  lazy(() => import('./components/Journey'))
+const Blog = lazy(()=> import('./components/Blog'))
+const Contact = lazy(()=> import('./components/Contact'))
 
 export const routes = [
     {
@@ -12,15 +14,27 @@ export const routes = [
         name: 'home'
     },
     {
-        path: '/resume',
-        element : Resume,
-        name: 'resume',
+        path: '/about',
+        element : About,
+        name: 'about',
         exact: true
     },
     {
-        path: '/portfolio',
-        element : Portfolio,
-        name: 'protfolio',
+        path: '/services',
+        element : Services,
+        name: 'services',
+        exact: true
+    },
+    {
+        path: '/works',
+        element : Works,
+        name: 'works',
+        exact: true
+    },
+    {
+        path: '/journey',
+        element : Journey,
+        name: 'journey',
         exact: true
     },
     {
