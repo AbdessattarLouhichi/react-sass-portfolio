@@ -1,0 +1,38 @@
+  .home {
+    padding-top: 5%;
+    
+    .left {
+      padding-top: 10%;
+    }
+    button {
+      margin-top: 50px;
+    }
+    .icon {
+      position: absolute;
+      right: 0;
+      top: 30%;
+      flex-direction: column;
+      i {
+        width: 40px;
+        height: 40px;
+        border: 1px solid $white;
+        text-align: center;
+        line-height: 40px;
+        margin-top: 20px;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+      i:hover {
+        background: #ffe026;
+        cursor: pointer;
+        border: none;
+      }
+      
+    }
+  }
+ 
+  .left, .right {
+    width: 50%;
+    position: relative;
+    padding: 30px;
+  }

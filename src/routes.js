@@ -1,8 +1,8 @@
 import { lazy } from 'react'
-const Home = lazy(() => import('./components/Home'))
+const Home = lazy(() => import('./components/HomePage'))
 const About =  lazy(() => import('./components/About'))
 const Services=  lazy(() => import('./components/Services'))
-const Works =  lazy(() => import('./components/About'))
+const Works =  lazy(() => import('./components/Works'))
 const Journey=  lazy(() => import('./components/Journey'))
 const Blog = lazy(()=> import('./components/Blog'))
 const Contact = lazy(()=> import('./components/Contact'))
@@ -11,7 +11,8 @@ export const routes = [
     {
         path: '/',
         element : Home,
-        name: 'home'
+        name: 'home',
+        exact: true
     },
     {
         path: '/about',

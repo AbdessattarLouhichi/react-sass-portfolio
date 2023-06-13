@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$primary: #1A232C;
+$secondary:#20C863;
+$white: #fff;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+   
+  .btn2 {
+    background: $secondary;
+    color: $white;
+    margin-left: 5px !important;
+  }
+
+  .btn1:hover {
+    background: black;
+    color: $white;
+    border: 2px solid $white;
+  }
+
+  .btn2:hover {
+    background: $white;
+    color: $secondary;
+    border: 2px solid $secondary;
+  }
+
+
+  .btn3 {
+    background: none;
+    border: 2px solid #20C863;
+    color: #20C863;
+    padding: 15px 50px;
+  }
+  
+$breakpoint-sm: 511px;
+$breakpoint-md: 768px;
